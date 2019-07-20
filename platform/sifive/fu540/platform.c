@@ -62,6 +62,8 @@ static void fu540_modify_dt(void *fdt)
 	char cpu_node[32] = "";
 	const char *mmu_type;
 
+	sbi_printf("fu540_modify_dt: fdt: 0x%p\n", fdt);
+
 	for (i = 0; i < FU540_HART_COUNT; i++) {
 		sbi_sprintf(cpu_node, "/cpus/cpu@%d", i);
 		cpu_offset = fdt_path_offset(fdt, cpu_node);
