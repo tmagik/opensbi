@@ -114,12 +114,12 @@
 
 #define csr_read_set(csr, val)                                          \
 	({                                                              \
-		unsigned long __v = (unsigned long)(val);               \
+		unsigned long __r, __v = (unsigned long)(val);          \
 		__asm__ __volatile__("csrrs %0, " __ASM_STR(csr) ", %1" \
-				     : "=r"(__v)                        \
+				     : "=r"(__r)                        \
 				     : "rK"(__v)                        \
 				     : "memory");                       \
-		__v;                                                    \
+		__r;                                                    \
 	})
 
 #define csr_set(csr, val)                                          \
