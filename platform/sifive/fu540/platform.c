@@ -40,8 +40,9 @@
  * The FU540 SoC has 5 HARTs but HART ID 0 doesn't have S mode. enable only
  * HARTs 1 to 4.
  */
+/* new m-mode U-boot seems to need hard 0 running? */
 #ifndef FU540_ENABLED_HART_MASK
-#define FU540_ENABLED_HART_MASK	(1 << 1 | 1 << 2 | 1 << 3 | 1 << 4)
+#define FU540_ENABLED_HART_MASK	(1| 1 << 1 | 1 << 2 | 1 << 3 | 1 << 4)
 #endif
 
 #define FU540_HARITD_DISABLED			~(FU540_ENABLED_HART_MASK)
